@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Browser 03</title>
+    <script src="jquery.js"></script>
+    <style>
+        #gallery {
+            border: black solid 1px;
+            margin: 20px;
+            width: 500px;
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+        }
+
+        img {
+            width: 100%;
+            cursor: pointer;
+        }
+
+        figure img {
+            min-width: 800px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="gallery">
+    <img src="images/image_0.jpg" id="img0"/>
+    <img src="images/image_1.jpg" id="img1" style="display: none"/>
+    <img src="images/image_2.jpg" id="img2" style="display: none"/>
+    <img src="images/image_3.jpg" id="img3" style="display: none"/>
+    <img src="images/image_4.jpg" id="img4" style="display: none"/>
+    <img src="images/image_5.jpg" id="img5" style="display: none"/>
+    <img src="images/image_6.jpg" id="img6" style="display: none"/>
+    <img src="images/image_7.jpg" id="img7" style="display: none"/>
+    <img src="images/image_8.jpg" id="img8" style="display: none"/>
+</div>
+<script>
+    var current = 0;
+    $('#gallery').click(function () {
+        $('#img' + current).hide();
+        current = (current + 1) % 9;
+        $('#img' + current).show();
+        console.log(current);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Browser 04</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<!--
+    Quote Service:
+      -> text: https://www.sws.bfh.ch/~locher/webprog/services/quote.php
+      -> json: https://www.sws.bfh.ch/~locher/webprog/services/quote.php?format=json
+-->
+
+<button id="get-quote">Get a random quote</button>
+<p id="quote"></p>
+<p id="error" style="display: none; color: red">Something Wrong</p>
+
+<script>
+ /*
+    $('#get-quote').on('click', function(){
+        $.ajax({
+            url: "https://www.sws.bfh.ch/~locher/webprog/services/quote.php",
+            type: "GET",
+            dataType: "text",
+            success: function (data) {
+                $('#quote').html(data);
+            },
+            error: function (jqXHR, status, msg) {
+                $("#error").html("Error! " + msg);
+            }
+        });
+    });
+*/
+    /*
+	$.get('https://www.sws.bfh.ch/~locher/webprog/services/quote.php', function (data) {
+		$('#quote').html(data);
+	});
+	*/
+    $('#quote').load("https://www.sws.bfh.ch/~locher/webprog/services/quote.php");
+</script>
+</body>
+</html>

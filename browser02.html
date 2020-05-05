@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Browser 02</title>
+    <script src="jquery.js"></script>
+    <style>
+        form {
+            line-height: 30px;
+        }
+
+        label {
+            display: inline-block;
+            width: 100px;
+        }
+
+        input {
+            width: 200px;
+        }
+
+        input[type="submit"] {
+            margin-left: 100px;
+            margin-top: 20px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Please Register</h2>
+<form id="myForm" method="post">
+	<p id="error" style="display: none; color: red">Passwords don't match</p>
+    <label>Name</label><input name="name" required/><br/>
+    <label>Email</label><input name="email" type="email" required/><br/>
+    <label>Password</label><input name="pw1" type="password" required/><br/>
+    <label>Check</label><input name="pw2" type="password" required/><br/>
+    <input type="submit" name="submit" value="Register"/>
+</form>
+<script>
+    $("#myForm").submit(function (event) {
+        var passwordVal = $("input[name='pw1']").val();
+        var checkVal = $("input[name='pw2']").val();
+        console.log(passwordVal);
+        if (passwordVal !== checkVal) {
+            $("#error").show();
+            event.preventDefault();
+        }
+    });
+</script>
+
+
+</body>
+</html>
